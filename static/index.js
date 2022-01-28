@@ -127,7 +127,7 @@
         _gameScore = 0;
         _gameOver = false;
         _gameStart = false;
-        _gameTimeNum = 20;
+        _gameTimeNum = 10;
         GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
         countBlockSize();
         refreshGameLayer(GameLayer[0]);
@@ -345,13 +345,13 @@
         let date2 = new Date();
         deviation_time = (date2.getTime() - _date1.getTime())
         if (deviation_time > 23000) {
-            return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
+            return '倒计时多了' + ((deviation_time / 1000) - 10).toFixed(2) + "s";
         }
         SubmitResults();
-        if (score <= 49) return '试着好好练一下？';
-        if (score <= 99) return 'TCL';
-        if (score <= 149) return 'TQL';
-        if (score <= 199) return '您';
+        if (score <= 25) return '你连那子都打不过';
+        if (score <= 50) return '那子被您打爆啦';
+        if (score <= 75) return '打爆的那子可以绕地球两圈';
+        if (score <= 100) return '别打啦，出人命了';
         return '人？';
     }
 
